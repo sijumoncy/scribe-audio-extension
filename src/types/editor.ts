@@ -1,4 +1,4 @@
-import * as vscode from 'vscode';
+import * as vscode from "vscode";
 
 export interface IAudioData {
   default: string;
@@ -31,3 +31,19 @@ export type ExtToNavMsg = {
 };
 
 // Message Type From UI to Extension
+export enum EditorToExtMSgType {
+  startRecord = "trigger to start the record",
+  stopRecord = "trigger to stop the record",
+  deleteAudio = "trigger to delete the audio",
+}
+
+// type EditorUItoExtMsgDataType = EditorToExtMSgType;
+
+export type RecordTriggerData = {
+  verse: number;
+};
+
+export type EditorUItoExtMsg = {
+  type: EditorToExtMSgType;
+  data: IChapterdata | RecordTriggerData;
+};

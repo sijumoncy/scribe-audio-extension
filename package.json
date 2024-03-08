@@ -63,9 +63,9 @@
     "menus": {
       "view/title": [
         {
-          "command": "audio-explorer-sidebar-view.refreshEntry",
-          "when": "view == audio-explorer-sidebar-view",
-          "group": "navigation"
+          "command": "scribe-audio.exportVerseLevel",
+          "when": "view == audio-explorer-sidebar",
+          "group": "ScribeAudio"
         }
       ],
       "commandPalette": []
@@ -96,6 +96,11 @@
       {
         "command": "scribe-audio.openAudioEditor",
         "title": "Open Scribe Audio Editor",
+        "category": "ScribeAudio"
+      },
+      {
+        "command": "scribe-audio.exportVerseLevel",
+        "title": "Export - Verse Level",
         "category": "ScribeAudio"
       }
     ]
@@ -128,6 +133,8 @@
   },
   "dependencies": {
     "@vscode/webview-ui-toolkit": "^1.4.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "md5": "^2.3.0",
     "moment": "^2.30.1",
     "usfm-grammar": "^2.3.1",
     "uuid": "^9.0.1"
